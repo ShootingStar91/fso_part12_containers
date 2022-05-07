@@ -1,0 +1,65 @@
+Script started on 2022-05-07 12:50:18+03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="154" LINES="61"]
+]0;arttu@mamel: ~/devaus/part12-containers-applications/script-answers[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/script-answers[00m$ docker run -it ubuntu bash
+docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+]0;arttu@mamel: ~/devaus/part12-containers-applications/script-answers[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/script-answers[00m$ sudo h[Kchmod 777[K[K[K666 /var/run/docker.sock
+[sudo] password for arttu: 
+]0;arttu@mamel: ~/devaus/part12-containers-applications/script-answers[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/script-answers[00m$ sudo chmod 666 /var/run/docker.sock[9Pdocker run -it ubuntu bashexit[Kdocker run -it ubuntu bash
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+
+[1A[2K125a6e411906: Pulling fs layer [1B[1A[2K125a6e411906: Downloading [>                                                  ]  311.3kB/30.42MB[1B[1A[2K125a6e411906: Downloading [============>                                      ]  7.809MB/30.42MB[1B[1A[2K125a6e411906: Downloading [===========================>                       ]  16.91MB/30.42MB[1B[1A[2K125a6e411906: Downloading [========================================>          ]  24.73MB/30.42MB[1B[1A[2K125a6e411906: Verifying Checksum [1B[1A[2K125a6e411906: Download complete [1B[1A[2K125a6e411906: Extracting [>                                                  ]  327.7kB/30.42MB[1B[1A[2K125a6e411906: Extracting [============>                                      ]  7.864MB/30.42MB[1B[1A[2K125a6e411906: Extracting [=======================>                           ]  14.09MB/30.42MB[1B[1A[2K125a6e411906: Extracting [====================================>              ]  22.28MB/30.42MB[1B[1A[2K125a6e411906: Extracting [============================================>      ]   27.2MB/30.42MB[1B[1A[2K125a6e411906: Extracting [==================================================>]  30.42MB/30.42MB[1B[1A[2K125a6e411906: Pull complete [1BDigest: sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
+Status: Downloaded newer image for ubuntu:latest
+[?2004h]0;root@06989a97479c: /root@06989a97479c:/# [K]0;root@06989a97479c: /root@06989a97479c:/# mkdir /usr/src/app
+[?2004l[?2004h]0;root@06989a97479c: /root@06989a97479c:/# cd /usr/src/app/
+[?2004l[?2004h]0;root@06989a97479c: /usr/src/approot@06989a97479c:/usr/src/app# touch index.js
+[?2004l[?2004h]0;root@06989a97479c: /usr/src/approot@06989a97479c:/usr/src/app# ls
+[?2004lindex.js
+[?2004h]0;root@06989a97479c: /usr/src/approot@06989a97479c:/usr/src/app# cd /
+[?2004l[?2004h]0;root@06989a97479c: /root@06989a97479c:/# ls -la
+[?2004ltotal 60
+drwxr-xr-x   1 root root 4096 May  7 09:53 [0m[01;34m.[0m
+drwxr-xr-x   1 root root 4096 May  7 09:53 [01;34m..[0m
+-rwxr-xr-x   1 root root    0 May  7 09:53 [01;32m.dockerenv[0m
+lrwxrwxrwx   1 root root    7 Apr 28 12:01 [01;36mbin[0m -> [01;34musr/bin[0m
+drwxr-xr-x   2 root root 4096 Apr 18 10:28 [01;34mboot[0m
+drwxr-xr-x   5 root root  360 May  7 09:53 [01;34mdev[0m
+drwxr-xr-x   1 root root 4096 May  7 09:53 [01;34metc[0m
+drwxr-xr-x   2 root root 4096 Apr 18 10:28 [01;34mhome[0m
+lrwxrwxrwx   1 root root    7 Apr 28 12:01 [01;36mlib[0m -> [01;34musr/lib[0m
+lrwxrwxrwx   1 root root    9 Apr 28 12:01 [01;36mlib32[0m -> [01;34musr/lib32[0m
+lrwxrwxrwx   1 root root    9 Apr 28 12:01 [01;36mlib64[0m -> [01;34musr/lib64[0m
+lrwxrwxrwx   1 root root   10 Apr 28 12:01 [01;36mlibx32[0m -> [01;34musr/libx32[0m
+drwxr-xr-x   2 root root 4096 Apr 28 12:01 [01;34mmedia[0m
+drwxr-xr-x   2 root root 4096 Apr 28 12:01 [01;34mmnt[0m
+drwxr-xr-x   2 root root 4096 Apr 28 12:01 [01;34mopt[0m
+dr-xr-xr-x 471 root root    0 May  7 09:53 [01;34mproc[0m
+drwx------   2 root root 4096 Apr 28 12:04 [01;34mroot[0m
+drwxr-xr-x   5 root root 4096 Apr 28 12:04 [01;34mrun[0m
+lrwxrwxrwx   1 root root    8 Apr 28 12:01 [01;36msbin[0m -> [01;34musr/sbin[0m
+drwxr-xr-x   2 root root 4096 Apr 28 12:01 [01;34msrv[0m
+dr-xr-xr-x  13 root root    0 May  7 09:53 [01;34msys[0m
+drwxrwxrwt   2 root root 4096 Apr 28 12:04 [30;42mtmp[0m
+drwxr-xr-x   1 root root 4096 Apr 28 12:01 [01;34musr[0m
+drwxr-xr-x  11 root root 4096 Apr 28 12:04 [01;34mvar[0m
+[?2004h]0;root@06989a97479c: /root@06989a97479c:/# cd home
+[?2004l[?2004h]0;root@06989a97479c: /homeroot@06989a97479c:/home# ls
+[?2004l[?2004h]0;root@06989a97479c: /homeroot@06989a97479c:/home# ls -la
+[?2004ltotal 8
+drwxr-xr-x 2 root root 4096 Apr 18 10:28 [0m[01;34m.[0m
+drwxr-xr-x 1 root root 4096 May  7 09:53 [01;34m..[0m
+[?2004h]0;root@06989a97479c: /homeroot@06989a97479c:/home# cd ..
+[?2004l[?2004h]0;root@06989a97479c: /root@06989a97479c:/# exit
+[?2004lexit
+]0;arttu@mamel: ~/devaus/part12-containers-applications/script-answers[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/script-answers[00m$ ls -la
+total 20
+drwxrwxr-x 2 arttu arttu 4096 touko   7 12:50 [0m[01;34m.[0m
+drwxrwxr-x 5 arttu arttu 4096 touko   7 12:24 [01;34m..[0m
+-rw-rw-r-- 1 arttu arttu  232 touko   7 12:25 exercise12_1.txt
+-rw-rw-r-- 1 arttu arttu 4096 touko   7 12:53 exercise12_2.txt
+-rw-rw-r-- 1 arttu arttu    0 touko   7 12:11 .gitkeep
+-rw-rw-r-- 1 arttu arttu  541 touko   7 12:48 typescript
+]0;arttu@mamel: ~/devaus/part12-containers-applications/script-answers[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/script-answers[00m$ exit
+exit
+
+Script done on 2022-05-07 12:54:15+03:00 [COMMAND_EXIT_CODE="0"]
