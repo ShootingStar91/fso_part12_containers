@@ -1,7 +1,0 @@
-Script started on 2022-05-07 12:48:27+03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="154" LINES="61"]
-]0;arttu@mamel: ~/devaus/part12-containers-applications/script-answers[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/script-answers[00m$ echo "hello"
-hello
-]0;arttu@mamel: ~/devaus/part12-containers-applications/script-answers[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/script-answers[00m$ exit
-exit
-
-Script done on 2022-05-07 12:48:39+03:00 [COMMAND_EXIT_CODE="0"]

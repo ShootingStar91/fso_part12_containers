@@ -1,0 +1,393 @@
+Script started on 2022-05-14 13:18:11+03:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="154" LINES="61"]
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker exec[K[K[K[K[K[K[K[K[K[K[Kdocker [K[K[K[K[K[K[Kdocker [3Pexitls -ladocker container lsmpose -f docker-compose.dev.yml upls[Kcd todo-backend/ls[Kdocker compose -f docker-compose.dev.yml up[C[C -[K[K -d
+[1A[1B[0G[?25l[+] Running 1/0
+[34m ⠿ Container todo-backend-mongo-1  Running                                                                                                           0.0s
+[0m[?25h]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ doc[Kcker exec mongo -[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kdocker exec[K[K[K[K[K[Kr container ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED      STATUS         PORTS                                         NAMES
+e49bbc9a0c23   mongo     "docker-entrypoint.s…"   5 days ago   Up 7 minutes   0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend-mongo-1
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker exec -it todo-ack[K[K[Kbackend-mongo-1 bash
+]0;root@e49bbc9a0c23: /root@e49bbc9a0c23:/# mongo -u root -p example
+MongoDB shell version v5.0.8
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("8775cab4-e2d7-406e-b33e-24a79b44ead3") }
+MongoDB server version: 5.0.8
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+	https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+	https://community.mongodb.com
+---
+The server generated these startup warnings when booting: 
+        2022-05-14T10:16:48.119+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs[3G[Jshow dbs[11G
+admin         0.000GB
+config        0.000GB
+local         0.000GB
+the_database  0.000GB
+> use the_database[3G[Juse the_database[19G
+switched to db the_database
+> show collections[3G[Jshow collections[19G
+todos
+> db.todos.find({})[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("6277bc312183dbe1794823fa"), "text" : "Learn about blah123", "done" : true }
+> db.collection[3G[Jdb.collectio[15G[3G[Jdb.collecti[14G[3G[Jdb.collect[13G[3G[Jdb.collec[12G[3G[Jdb.colle[11G[3G[Jdb.coll[10G[3G[Jdb.col[9G[3G[Jdb.co[8G[3G[Jdb.c[7G[3G[Jdb.[6Gtodos.insertOne({})[3G[Jdb.todos.insertOne[1;34m([0m{})[24G[3G[Jdb.todos.insertOne([1;34m{[0m})[23G[3G[Jdb.todos.insertOne([1;34m{[0m })[24G[3G[Jdb.todos.insertOne({ })[23G[3G[Jdb.todos.insertOne({  })[24G[3G[Jdb.todos.insertOne({ " })[25G[3G[Jdb.todos.insertOne({ "t })[26G[3G[Jdb.todos.insertOne({ "te })[27G[3G[Jdb.todos.insertOne({ "tex })[28G[3G[Jdb.todos.insertOne({ "text })[29G[3G[Jdb.todos.insertOne({ "text: })[30G[3G[Jdb.todos.insertOne({ "text:" })[31G[3G[Jdb.todos.insertOne({ "text: })[30G[3G[Jdb.todos.insertOne({ "text })[29G[3G[Jdb.todos.insertOne({ "text" })[30G[3G[Jdb.todos.insertOne({ "text": })[31G[3G[Jdb.todos.insertOne({ "text":  })[32G[3G[Jdb.todos.insertOne({ "text": " })[33G[3G[Jdb.todos.insertOne({ "text": "D })[34G[3G[Jdb.todos.insertOne({ "text": "Do })[35G[3G[Jdb.todos.insertOne({ "text": "Do  })[36G[3G[Jdb.todos.insertOne({ "text": "Do f })[37G[3G[Jdb.todos.insertOne({ "text": "Do fu })[38G[3G[Jdb.todos.insertOne({ "text": "Do ful })[39G[3G[Jdb.todos.insertOne({ "text": "Do full })[40G[3G[Jdb.todos.insertOne({ "text": "Do fulls })[41G[3G[Jdb.todos.insertOne({ "text": "Do fullst })[42G[3G[Jdb.todos.insertOne({ "text": "Do fullsta })[43G[3G[Jdb.todos.insertOne({ "text": "Do fullstac })[44G[3G[Jdb.todos.insertOne({ "text": "Do fullstack })[45G[3G[Jdb.todos.insertOne({ "text": "Do fullstack  })[46G[3G[Jdb.todos.insertOne({ "text": "Do fullstack c })[47G[3G[Jdb.todos.insertOne({ "text": "Do fullstack co })[48G[3G[Jdb.todos.insertOne({ "text": "Do fullstack cou })[49G[3G[Jdb.todos.insertOne({ "text": "Do fullstack cour })[50G[3G[Jdb.todos.insertOne({ "text": "Do fullstack cours })[51G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course })[52G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course  })[53G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course c })[54G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course co })[55G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course com })[56G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course comp })[57G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course compl })[58G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course comple })[59G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course complet })[60G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course complete })[61G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completel })[62G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely })[63G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely! })[64G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!" })[65G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!"  })[66G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!" })[65G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", })[66G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!",  })[67G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", " })[68G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "d })[69G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "do })[70G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "don })[71G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done })[72G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done" })[73G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done": })[74G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done":  })[75G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done": })[74G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done":  })[75G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done": })[74G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done" })[73G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done"  })[74G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done" : })[75G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done" :  })[76G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done" : f })[77G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done" : fa })[78G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done" : fal })[79G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done" : fals })[80G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done" : false })[81G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done" : false })[80G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done" : false })[79G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done" : false })[78G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done" : false })[77G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done" : false })[76G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done" : false })[75G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done" : false })[74G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done": false })[73G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done": false })[83G[3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done": false })[83G
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("627f83b49ad9d934bda1db44")
+}
+> [3G[Jdb.todos.insertOne({ "text": "Do fullstack course completely!", "done": false })[83G[3G[Jdb.todos.find({})[20G[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("6277bc312183dbe1794823fa"), "text" : "Learn about blah123", "done" : true }
+{ "_id" : ObjectId("627f83b49ad9d934bda1db44"), "text" : "Do fullstack course completely!", "done" : false }
+> exit[3G[Jexit[7G
+bye
+]0;root@e49bbc9a0c23: /root@e49bbc9a0c23:/# exit
+exit
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker exec -it todo-backend-mongo-1 bash [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdocker container ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED      STATUS          PORTS                                         NAMES
+e49bbc9a0c23   mongo     "docker-entrypoint.s…"   5 days ago   Up 26 minutes   0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend-mongo-1
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ cat [K[K[K[Kls
+app.js  docker-compose.dev.yml  Dockerfile        [0m[01;34mmongo[0m       [01;34mnode_modules[0m  package-lock.json  [01;34mredis[0m   start
+[01;34mbin[0m     docker-compose.yml      exercise12_8.txt  [01;34mmongo_data[0m  package.json  README.md          [01;34mroutes[0m  [01;34mutil[0m
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ cat docker-compose.dev.yml 
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo
+    ports:
+      - 3456:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: the_database
+    volumes:
+      - ./mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - ./mongo_data:/data/db
+
+
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker container ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED      STATUS          PORTS                                         NAMES
+e49bbc9a0c23   mongo     "docker-entrypoint.s…"   5 days ago   Up 35 minutes   0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend-mongo-1
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker cota[K[Kntainer ls -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                        PORTS                                         NAMES
+227b48fdac1f   nginx          "/docker-entrypoint.…"   45 minutes ago   Exited (137) 41 minutes ago                                                 epic_wright
+e49bbc9a0c23   mongo          "docker-entrypoint.s…"   5 days ago       Up 35 minutes                 0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend-mongo-1
+9fec62d4ef51   todo-backend   "docker-entrypoint.s…"   6 days ago       Exited (137) 6 days ago                                                     frosty_payne
+deb93e7c7542   todo-backend   "docker-entrypoint.s…"   6 days ago       Exited (1) 6 days ago                                                       zealous_dirac
+d6bc3f2a090d   todo-backend   "docker-entrypoint.s…"   6 days ago       Exited (137) 6 days ago                                                     confident_lehmann
+06989a97479c   ubuntu         "bash"                   7 days ago       Exited (0) 7 days ago                                                       zealous_haslett
+18c79f57d32e   hello-world    "/hello"                 7 days ago       Exited (0) 7 days ago                                                       determined_ellis
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker onta[K[K[K[Kcontainer ls -a[Kcat docker-compose.dev.yml ls[Kdocker container lsls[Kcat docker-compose.dev.yml ls[Kdocker container lsexec -it todo-backend-mongo-1 bash[22Pcontainer lsmpose -f docker-compose.dev.yml up -d
+[1A[1B[0G[?25l[+] Running 1/0
+[34m ⠿ Container todo-backend-mongo-1  Running                                                                                                           0.0s
+[0m[?25h]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker compose -f docker-compose.dev.yml up -d[24Pntainer ls -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                        PORTS                                         NAMES
+227b48fdac1f   nginx          "/docker-entrypoint.…"   45 minutes ago   Exited (137) 42 minutes ago                                                 epic_wright
+e49bbc9a0c23   mongo          "docker-entrypoint.s…"   5 days ago       Up 36 minutes                 0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend-mongo-1
+9fec62d4ef51   todo-backend   "docker-entrypoint.s…"   6 days ago       Exited (137) 6 days ago                                                     frosty_payne
+deb93e7c7542   todo-backend   "docker-entrypoint.s…"   6 days ago       Exited (1) 6 days ago                                                       zealous_dirac
+d6bc3f2a090d   todo-backend   "docker-entrypoint.s…"   6 days ago       Exited (137) 6 days ago                                                     confident_lehmann
+06989a97479c   ubuntu         "bash"                   7 days ago       Exited (0) 7 days ago                                                       zealous_haslett
+18c79f57d32e   hello-world    "/hello"                 7 days ago       Exited (0) 7 days ago                                                       determined_ellis
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker container ls -a[K[K[K
+CONTAINER ID   IMAGE     COMMAND                  CREATED      STATUS          PORTS                                         NAMES
+e49bbc9a0c23   mongo     "docker-entrypoint.s…"   5 days ago   Up 36 minutes   0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend-mongo-1
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker container ls -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                        PORTS                                         NAMES
+227b48fdac1f   nginx          "/docker-entrypoint.…"   46 minutes ago   Exited (137) 42 minutes ago                                                 epic_wright
+e49bbc9a0c23   mongo          "docker-entrypoint.s…"   5 days ago       Up 36 minutes                 0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend-mongo-1
+9fec62d4ef51   todo-backend   "docker-entrypoint.s…"   6 days ago       Exited (137) 6 days ago                                                     frosty_payne
+deb93e7c7542   todo-backend   "docker-entrypoint.s…"   6 days ago       Exited (1) 6 days ago                                                       zealous_dirac
+d6bc3f2a090d   todo-backend   "docker-entrypoint.s…"   6 days ago       Exited (137) 6 days ago                                                     confident_lehmann
+06989a97479c   ubuntu         "bash"                   7 days ago       Exited (0) 7 days ago                                                       zealous_haslett
+18c79f57d32e   hello-world    "/hello"                 7 days ago       Exited (0) 7 days ago                                                       determined_ellis
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ container [K[K[K[K[K[K[K[K[K[Kls
+app.js  docker-compose.dev.yml  Dockerfile        [0m[01;34mmongo[0m       [01;34mnode_modules[0m  package-lock.json  [01;34mredis[0m   start
+[01;34mbin[0m     docker-compose.yml      exercise12_8.txt  [01;34mmongo_data[0m  package.json  README.md          [01;34mroutes[0m  [01;34mutil[0m
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ container mongo_[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kls
+app.js  docker-compose.dev.yml  Dockerfile        [0m[01;34mmongo[0m       [01;34mnode_modules[0m  package-lock.json  [01;34mredis[0m   start
+[01;34mbin[0m     docker-compose.yml      exercise12_8.txt  [01;34mmongo_data[0m  package.json  README.md          [01;34mroutes[0m  [01;34mutil[0m
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ cat Dockerfile k[K[K
+FROM node:16
+
+WORKDIR /usr/src/app
+
+COPY --chown=node:node . .
+
+RUN npm ci --only=production
+
+CMD npm start
+
+
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ ls -la
+total 248
+drwxrwxr-x   9 arttu            arttu   4096 touko  14 13:18 [0m[01;34m.[0m
+drwxrwxr-x   4 arttu            arttu   4096 touko  14 13:14 [01;34m..[0m
+-rw-rw-r--   1 arttu            arttu    370 touko   7 12:11 app.js
+drwxrwxr-x   2 arttu            arttu   4096 touko   7 12:11 [01;34mbin[0m
+-rw-rw-r--   1 arttu            arttu    339 touko   8 15:48 docker-compose.dev.yml
+-rw-rw-r--   1 arttu            arttu    102 touko   7 16:53 docker-compose.yml
+-rw-rw-r--   1 arttu            arttu    110 touko   7 16:16 Dockerfile
+-rw-rw-r--   1 arttu            arttu     49 touko   7 16:02 .dockerignore
+-rw-rw-r--   1 arttu            arttu  32768 touko  14 13:58 exercise12_8.txt
+-rw-rw-r--   1 arttu            arttu    914 touko   7 12:11 .gitignore
+drwxrwxr-x   3 arttu            arttu   4096 touko   7 12:11 [01;34mmongo[0m
+drwxr-xr-x   4 systemd-coredump root    4096 touko  14 13:59 [01;34mmongo_data[0m
+drwxrwxr-x 186 arttu            arttu   4096 touko   8 14:33 [01;34mnode_modules[0m
+-rw-rw-r--   1 arttu            arttu    382 touko   7 12:11 package.json
+-rw-rw-r--   1 arttu            arttu 139409 touko   8 14:33 package-lock.json
+-rw-rw-r--   1 arttu            arttu    438 touko   7 12:11 README.md
+drwxrwxr-x   2 arttu            arttu   4096 touko   7 12:11 [01;34mredis[0m
+drwxrwxr-x   2 arttu            arttu   4096 touko   7 12:11 [01;34mroutes[0m
+-rw-rw-r--   1 arttu            arttu    368 touko  14 13:18 start
+drwxrwxr-x   2 arttu            arttu   4096 touko   7 12:11 [01;34mutil[0m
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ dockerc [K[K container ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED      STATUS          PORTS                                         NAMES
+e49bbc9a0c23   mongo     "docker-entrypoint.s…"   5 days ago   Up 43 minutes   0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend-mongo-1
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker container ls -
+"docker container ls" accepts no arguments.
+See 'docker container ls --help'.
+
+Usage:  docker container ls [OPTIONS]
+
+List containers
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker container ls -A [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[KA
+unknown shorthand flag: 'A' in -A
+See 'docker container ls --help'.
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker container ls -A a[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ka
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                        PORTS                                         NAMES
+227b48fdac1f   nginx          "/docker-entrypoint.…"   54 minutes ago   Exited (137) 50 minutes ago                                                 epic_wright
+e49bbc9a0c23   mongo          "docker-entrypoint.s…"   5 days ago       Up 44 minutes                 0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend-mongo-1
+9fec62d4ef51   todo-backend   "docker-entrypoint.s…"   6 days ago       Exited (137) 6 days ago                                                     frosty_payne
+deb93e7c7542   todo-backend   "docker-entrypoint.s…"   6 days ago       Exited (1) 6 days ago                                                       zealous_dirac
+d6bc3f2a090d   todo-backend   "docker-entrypoint.s…"   6 days ago       Exited (137) 6 days ago                                                     confident_lehmann
+06989a97479c   ubuntu         "bash"                   7 days ago       Exited (0) 7 days ago                                                       zealous_haslett
+18c79f57d32e   hello-world    "/hello"                 7 days ago       Exited (0) 7 days ago                                                       determined_ellis
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ öd[K[Kls
+app.js  docker-compose.dev.yml  Dockerfile        [0m[01;34mmongo[0m       [01;34mnode_modules[0m  package-lock.json  [01;34mredis[0m   start
+[01;34mbin[0m     docker-compose.yml      exercise12_8.txt  [01;34mmongo_data[0m  package.json  README.md          [01;34mroutes[0m  [01;34mutil[0m
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ cd mongo
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend/mongo[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend/mongo[00m$ ls
+index.js  [0m[01;34mmodels[0m  mongo-init.js
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend/mongo[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend/mongo[00m$ cat mongo-init.js 
+db.createUser({
+  user: 'the_username',
+  pwd: 'the_password',
+  roles: [
+    {
+      role: 'dbOwner',
+      db: 'the_database',
+    },
+  ],
+});
+
+db.createCollection('todos');
+
+db.todos.insert({ text: 'Write code', done: true });
+db.todos.insert({ text: 'Learn about containers', done: false });]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend/mongo[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend/mongo[00m$ 
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend/mongo[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend/mongo[00m$ 
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend/mongo[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend/mongo[00m$ cd ..
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ ls
+app.js  docker-compose.dev.yml  Dockerfile        [0m[01;34mmongo[0m       [01;34mnode_modules[0m  package-lock.json  [01;34mredis[0m   start
+[01;34mbin[0m     docker-compose.yml      exercise12_8.txt  [01;34mmongo_data[0m  package.json  README.md          [01;34mroutes[0m  [01;34mutil[0m
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ ls -la
+total 260
+drwxrwxr-x   9 arttu            arttu   4096 touko  14 13:18 [0m[01;34m.[0m
+drwxrwxr-x   4 arttu            arttu   4096 touko  14 13:14 [01;34m..[0m
+-rw-rw-r--   1 arttu            arttu    370 touko   7 12:11 app.js
+drwxrwxr-x   2 arttu            arttu   4096 touko   7 12:11 [01;34mbin[0m
+-rw-rw-r--   1 arttu            arttu    339 touko   8 15:48 docker-compose.dev.yml
+-rw-rw-r--   1 arttu            arttu    102 touko   7 16:53 docker-compose.yml
+-rw-rw-r--   1 arttu            arttu    110 touko   7 16:16 Dockerfile
+-rw-rw-r--   1 arttu            arttu     49 touko   7 16:02 .dockerignore
+-rw-rw-r--   1 arttu            arttu  45056 touko  14 14:01 exercise12_8.txt
+-rw-rw-r--   1 arttu            arttu    914 touko   7 12:11 .gitignore
+drwxrwxr-x   3 arttu            arttu   4096 touko   7 12:11 [01;34mmongo[0m
+drwxr-xr-x   4 systemd-coredump root    4096 touko  14 14:01 [01;34mmongo_data[0m
+drwxrwxr-x 186 arttu            arttu   4096 touko   8 14:33 [01;34mnode_modules[0m
+-rw-rw-r--   1 arttu            arttu    382 touko   7 12:11 package.json
+-rw-rw-r--   1 arttu            arttu 139409 touko   8 14:33 package-lock.json
+-rw-rw-r--   1 arttu            arttu    438 touko   7 12:11 README.md
+drwxrwxr-x   2 arttu            arttu   4096 touko   7 12:11 [01;34mredis[0m
+drwxrwxr-x   2 arttu            arttu   4096 touko   7 12:11 [01;34mroutes[0m
+-rw-rw-r--   1 arttu            arttu    368 touko  14 13:18 start
+drwxrwxr-x   2 arttu            arttu   4096 touko   7 12:11 [01;34mutil[0m
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ cd bin
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend/bin[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend/bin[00m$ ls
+[0m[01;32mwww[0m
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend/bin[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend/bin[00m$ cd ..
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker container ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED      STATUS          PORTS                                         NAMES
+e49bbc9a0c23   mongo     "docker-entrypoint.s…"   5 days ago   Up 46 minutes   0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend-mongo-1
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker container ls -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                        PORTS                                         NAMES
+227b48fdac1f   nginx          "/docker-entrypoint.…"   56 minutes ago   Exited (137) 53 minutes ago                                                 epic_wright
+e49bbc9a0c23   mongo          "docker-entrypoint.s…"   5 days ago       Up 46 minutes                 0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend-mongo-1
+9fec62d4ef51   todo-backend   "docker-entrypoint.s…"   6 days ago       Exited (137) 6 days ago                                                     frosty_payne
+deb93e7c7542   todo-backend   "docker-entrypoint.s…"   6 days ago       Exited (1) 6 days ago                                                       zealous_dirac
+d6bc3f2a090d   todo-backend   "docker-entrypoint.s…"   6 days ago       Exited (137) 6 days ago                                                     confident_lehmann
+06989a97479c   ubuntu         "bash"                   7 days ago       Exited (0) 7 days ago                                                       zealous_haslett
+18c79f57d32e   hello-world    "/hello"                 7 days ago       Exited (0) 7 days ago                                                       determined_ellis
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker ls -la
+docker: 'ls' is not a docker command.
+See 'docker --help'
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker ls -la[K[K[K[K[K[K[K[K[K[K[K[K[K[K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker compose -f docker-dompose.dev.yml down --volumes
+stat /home/arttu/devaus/part12-containers-applications/todo-app/todo-backend/docker-dompose.dev.yml: no such file or directory
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker compose -f docker-dompose.dev.yml down --volumes[1P[1@c
+[1A[1B[0G[?25l[+] Running 0/0
+[37m ⠋ Container todo-backend-mongo-1  Stopping                                                                                                          0.1s
+[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+[37m ⠙ Container todo-backend-mongo-1  Stopping                                                                                                          0.2s
+[0m[?25h[1A[1A[0G[?25l[34m[+] Running 1/1[0m
+[34m ⠿ Container todo-backend-mongo-1  Removed                                                                                                           0.3s
+[0m[37m ⠋ Network todo-backend_default    Removing                                                                                                          0.0s
+[0m[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+[34m ⠿ Container todo-backend-mongo-1  Removed                                                                                                           0.3s
+[0m[37m ⠙ Network todo-backend_default    Removing                                                                                                          0.1s
+[0m[?25h[1A[1A[1A[0G[?25l[34m[+] Running 2/2[0m
+[34m ⠿ Container todo-backend-mongo-1  Removed                                                                                                           0.3s
+[0m[34m ⠿ Network todo-backend_default    Removed                                                                                                           0.1s
+[0m[?25h]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker-compose -f docker-compose.dev.yml up
+
+Command 'docker-compose' not found, but can be installed with:
+
+sudo snap install docker          # version 20.10.12, or
+sudo apt  install docker-compose  # version 1.25.0-1
+
+See 'snap info docker' for additional versions.
+
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker-compose -f docker-compose.dev.yml up[C[C[C[C[C[C[1P[1@ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C -d
+[1A[1B[0G[?25l[+] Running 1/0
+[34m ⠿ Network todo-backend_default    Created                                                                                                           0.0s
+[0m[37m ⠿ Container todo-backend-mongo-1  Starting                                                                                                          0.1s
+[0m[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+[34m ⠿ Network todo-backend_default    Created                                                                                                           0.0s
+[0m[37m ⠿ Container todo-backend-mongo-1  Starting                                                                                                          0.2s
+[0m[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+[34m ⠿ Network todo-backend_default    Created                                                                                                           0.0s
+[0m[37m ⠿ Container todo-backend-mongo-1  Starting                                                                                                          0.3s
+[0m[?25h[1A[1A[1A[0G[?25l[34m[+] Running 2/2[0m
+[34m ⠿ Network todo-backend_default    Created                                                                                                           0.0s
+[0m[34m ⠿ Container todo-backend-mongo-1  Started                                                                                                           0.3s
+[0m[?25h]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker compose -f docker-compose.dev.yml up -d[3P-compose -f docker-compose.dev.yml up compose -f docker-compose.dev.yml down --volumes
+[1A[1B[0G[?25l[+] Running 0/0
+[37m ⠋ Container todo-backend-mongo-1  Stopping                                                                                                          0.1s
+[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+[37m ⠙ Container todo-backend-mongo-1  Stopping                                                                                                          0.2s
+[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+[37m ⠹ Container todo-backend-mongo-1  Stopping                                                                                                          0.3s
+[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+[37m ⠸ Container todo-backend-mongo-1  Stopping                                                                                                          0.4s
+[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+[37m ⠼ Container todo-backend-mongo-1  Stopping                                                                                                          0.5s
+[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+[37m ⠴ Container todo-backend-mongo-1  Stopping                                                                                                          0.6s
+[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+[37m ⠦ Container todo-backend-mongo-1  Stopping                                                                                                          0.7s
+[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+[37m ⠧ Container todo-backend-mongo-1  Stopping                                                                                                          0.8s
+[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+[37m ⠇ Container todo-backend-mongo-1  Stopping                                                                                                          0.9s
+[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+[37m ⠏ Container todo-backend-mongo-1  Stopping                                                                                                          1.0s
+[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+[37m ⠋ Container todo-backend-mongo-1  Stopping                                                                                                          1.1s
+[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+[37m ⠙ Container todo-backend-mongo-1  Stopping                                                                                                          1.2s
+[0m[?25h[1A[1A[0G[?25l[34m[+] Running 1/1[0m
+[34m ⠿ Container todo-backend-mongo-1  Removed                                                                                                           1.3s
+[0m[37m ⠋ Network todo-backend_default    Removing                                                                                                          0.0s
+[0m[?25h[1A[1A[1A[0G[?25l[34m[+] Running 2/2[0m
+[34m ⠿ Container todo-backend-mongo-1  Removed                                                                                                           1.3s
+[0m[34m ⠿ Network todo-backend_default    Removed                                                                                                           0.1s
+[0m[?25h]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ docker compose -f docker-compose.dev.yml down --volumes[9Pup -d[K[K[K
+[1A[1B[0G[?25l[+] Running 2/0
+[34m ⠿ Network todo-backend_default    Created                                                                                                           0.0s
+[0m[34m ⠿ Container todo-backend-mongo-1  Created                                                                                                           0.0s
+[0m[?25hAttaching to todo-backend-mongo-1
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:47.831+00:00"},"s":"I",  "c":"NETWORK",  "id":4915701, "ctx":"-","msg":"Initialized wire specification","attr":{"spec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":13},"incomingInternalClient":{"minWireVersion":0,"maxWireVersion":13},"outgoing":{"minWireVersion":0,"maxWireVersion":13},"isInternalClient":true}}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:47.834+00:00"},"s":"I",  "c":"CONTROL",  "id":23285,   "ctx":"main","msg":"Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'"}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:47.834+00:00"},"s":"W",  "c":"ASIO",     "id":22601,   "ctx":"main","msg":"No TransportLayer configured during NetworkInterface startup"}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:47.834+00:00"},"s":"I",  "c":"NETWORK",  "id":4648601, "ctx":"main","msg":"Implicit TCP FastOpen unavailable. If TCP FastOpen is required, set tcpFastOpenServer, tcpFastOpenClient, and tcpFastOpenQueueSize."}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:47.836+00:00"},"s":"W",  "c":"ASIO",     "id":22601,   "ctx":"main","msg":"No TransportLayer configured during NetworkInterface startup"}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:47.836+00:00"},"s":"I",  "c":"REPL",     "id":5123008, "ctx":"main","msg":"Successfully registered PrimaryOnlyService","attr":{"service":"TenantMigrationDonorService","ns":"config.tenantMigrationDonors"}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:47.836+00:00"},"s":"I",  "c":"REPL",     "id":5123008, "ctx":"main","msg":"Successfully registered PrimaryOnlyService","attr":{"service":"TenantMigrationRecipientService","ns":"config.tenantMigrationRecipients"}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:47.836+00:00"},"s":"I",  "c":"CONTROL",  "id":5945603, "ctx":"main","msg":"Multi threading initialized"}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:47.836+00:00"},"s":"I",  "c":"CONTROL",  "id":4615611, "ctx":"initandlisten","msg":"MongoDB starting","attr":{"pid":1,"port":27017,"dbPath":"/data/db","architecture":"64-bit","host":"4810858665d9"}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:47.836+00:00"},"s":"I",  "c":"CONTROL",  "id":23403,   "ctx":"initandlisten","msg":"Build Info","attr":{"buildInfo":{"version":"5.0.8","gitVersion":"c87e1c23421bf79614baf500fda6622bd90f674e","openSSLVersion":"OpenSSL 1.1.1f  31 Mar 2020","modules":[],"allocator":"tcmalloc","environment":{"distmod":"ubuntu2004","distarch":"x86_64","target_arch":"x86_64"}}}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:47.836+00:00"},"s":"I",  "c":"CONTROL",  "id":51765,   "ctx":"initandlisten","msg":"Operating System","attr":{"os":{"name":"Ubuntu","version":"20.04"}}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:47.836+00:00"},"s":"I",  "c":"CONTROL",  "id":21951,   "ctx":"initandlisten","msg":"Options set by command line","attr":{"options":{"net":{"bindIp":"*"},"security":{"authorization":"enabled"}}}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:47.837+00:00"},"s":"I",  "c":"STORAGE",  "id":22270,   "ctx":"initandlisten","msg":"Storage engine to use detected by data files","attr":{"dbpath":"/data/db","storageEngine":"wiredTiger"}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:47.837+00:00"},"s":"I",  "c":"STORAGE",  "id":22297,   "ctx":"initandlisten","msg":"Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem","tags":["startupWarnings"]}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:47.837+00:00"},"s":"I",  "c":"STORAGE",  "id":22315,   "ctx":"initandlisten","msg":"Opening WiredTiger","attr":{"config":"create,cache_size=7462M,session_max=33000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),builtin_extension_config=(zstd=(compression_level=6)),file_manager=(close_idle_time=600,close_scan_interval=10,close_handle_minimum=250),statistics_log=(wait=0),verbose=[recovery_progress,checkpoint_progress,compact_progress],"}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:48.397+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1652526408:397238][1:0x7f2305255c80], txn-recover: [WT_VERB_RECOVERY_PROGRESS] Recovering log 6 through 7"}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:48.415+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1652526408:415609][1:0x7f2305255c80], txn-recover: [WT_VERB_RECOVERY_PROGRESS] Recovering log 7 through 7"}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:48.445+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1652526408:445498][1:0x7f2305255c80], txn-recover: [WT_VERB_RECOVERY_ALL] Main recovery loop: starting at 6/6912 to 7/256"}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:48.479+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1652526408:479395][1:0x7f2305255c80], txn-recover: [WT_VERB_RECOVERY_PROGRESS] Recovering log 6 through 7"}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:48.501+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1652526408:501919][1:0x7f2305255c80], txn-recover: [WT_VERB_RECOVERY_PROGRESS] Recovering log 7 through 7"}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:48.517+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1652526408:517843][1:0x7f2305255c80], txn-recover: [WT_VERB_RECOVERY_ALL] Set global recovery timestamp: (0, 0)"}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:48.517+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1652526408:517861][1:0x7f2305255c80], txn-recover: [WT_VERB_RECOVERY_ALL] Set global oldest timestamp: (0, 0)"}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:48.519+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1652526408:519174][1:0x7f2305255c80], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 1, snapshot max: 1 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 875"}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:48.522+00:00"},"s":"I",  "c":"STORAGE",  "id":4795906, "ctx":"initandlisten","msg":"WiredTiger opened","attr":{"durationMillis":685}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:48.522+00:00"},"s":"I",  "c":"RECOVERY", "id":23987,   "ctx":"initandlisten","msg":"WiredTiger recoveryTimestamp","attr":{"recoveryTimestamp":{"$timestamp":{"t":0,"i":0}}}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:48.522+00:00"},"s":"I",  "c":"STORAGE",  "id":4366408, "ctx":"initandlisten","msg":"No table logging settings modifications are required for existing WiredTiger tables","attr":{"loggingEnabled":true}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:48.525+00:00"},"s":"I",  "c":"STORAGE",  "id":22262,   "ctx":"initandlisten","msg":"Timestamp monitor starting"}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:48.528+00:00"},"s":"I",  "c":"NETWORK",  "id":4915702, "ctx":"initandlisten","msg":"Updated wire specification","attr":{"oldSpec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":13},"incomingInternalClient":{"minWireVersion":0,"maxWireVersion":13},"outgoing":{"minWireVersion":0,"maxWireVersion":13},"isInternalClient":true},"newSpec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":13},"incomingInternalClient":{"minWireVersion":13,"maxWireVersion":13},"outgoing":{"minWireVersion":13,"maxWireVersion":13},"isInternalClient":true}}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:48.528+00:00"},"s":"I",  "c":"STORAGE",  "id":5071100, "ctx":"initandlisten","msg":"Clearing temp directory"}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:48.528+00:00"},"s":"I",  "c":"CONTROL",  "id":20536,   "ctx":"initandlisten","msg":"Flow Control is enabled on this deployment"}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:48.528+00:00"},"s":"I",  "c":"FTDC",     "id":20625,   "ctx":"initandlisten","msg":"Initializing full-time diagnostic data capture","attr":{"dataDirectory":"/data/db/diagnostic.data"}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:48.530+00:00"},"s":"I",  "c":"REPL",     "id":6015317, "ctx":"initandlisten","msg":"Setting new configuration state","attr":{"newState":"ConfigReplicationDisabled","oldState":"ConfigPreStart"}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:48.531+00:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"/tmp/mongodb-27017.sock"}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:48.531+00:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"0.0.0.0"}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:06:48.531+00:00"},"s":"I",  "c":"NETWORK",  "id":23016,   "ctx":"listener","msg":"Waiting for connections","attr":{"port":27017,"ssl":"off"}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:07:20.220+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.1:41548","uuid":"6e29ef6f-281f-427b-9527-3c59c19e3ced","connectionId":1,"connectionCount":1}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:07:20.223+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn1","msg":"client metadata","attr":{"remote":"172.19.0.1:41548","client":"conn1","doc":{"driver":{"name":"nodejs|Mongoose","version":"3.6.8"},"os":{"type":"Linux","name":"linux","architecture":"x64","version":"5.13.0-40-generic"},"platform":"'Node.js v16.6.2, LE (unified)","version":"3.6.8|5.13.2"}}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:07:23.654+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.1:41550","uuid":"0009fccd-ad6f-422e-b61d-abf3ca74a580","connectionId":2,"connectionCount":2}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:07:23.655+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn2","msg":"client metadata","attr":{"remote":"172.19.0.1:41550","client":"conn2","doc":{"driver":{"name":"nodejs|Mongoose","version":"3.6.8"},"os":{"type":"Linux","name":"linux","architecture":"x64","version":"5.13.0-40-generic"},"platform":"'Node.js v16.6.2, LE (unified)","version":"3.6.8|5.13.2"}}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:07:23.661+00:00"},"s":"I",  "c":"-",        "id":20883,   "ctx":"conn1","msg":"Interrupted operation as its client disconnected","attr":{"opId":409}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:07:23.661+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn2","msg":"Connection ended","attr":{"remote":"172.19.0.1:41550","uuid":"0009fccd-ad6f-422e-b61d-abf3ca74a580","connectionId":2,"connectionCount":1}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:07:23.661+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn1","msg":"Connection ended","attr":{"remote":"172.19.0.1:41548","uuid":"6e29ef6f-281f-427b-9527-3c59c19e3ced","connectionId":1,"connectionCount":0}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:07:48.527+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"Checkpointer","msg":"WiredTiger message","attr":{"message":"[1652526468:527895][1:0x7f22fca43700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 3, snapshot max: 3 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 875"}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:07:51.657+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.1:41552","uuid":"e88eb78a-c3fb-4e37-8370-e88e34c452ad","connectionId":3,"connectionCount":1}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:07:51.660+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn3","msg":"client metadata","attr":{"remote":"172.19.0.1:41552","client":"conn3","doc":{"driver":{"name":"nodejs|Mongoose","version":"3.6.8"},"os":{"type":"Linux","name":"linux","architecture":"x64","version":"5.13.0-40-generic"},"platform":"'Node.js v16.6.2, LE (unified)","version":"3.6.8|5.13.2"}}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:08:02.166+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.1:41554","uuid":"71fcd5d0-04e2-471e-9037-f694d98e3c3e","connectionId":4,"connectionCount":2}}
+[36mtodo-backend-mongo-1  |[0m {"t":{"$date":"2022-05-14T11:08:02.166+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn4","msg":"client metadata","attr":{"remote":"172.19.0.1:41554","client":"conn4","doc":{"driver":{"name":"nodejs|Mongoose","version":"3.6.8"},"os":{"type":"Linux","name":"linux","architecture":"x64","version":"5.13.0-40-generic"},"platform":"'Node.js v16.6.2, LE (unified)","version":"3.6.8|5.13.2"}}}
+^CGracefully stopping... (press Ctrl+C again to force)
+[1A[1B[0G[?25l[+] Running 0/0
+[37m ⠋ Container todo-backend-mongo-1  Stopping                                                                                                          0.1s
+[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+[37m ⠙ Container todo-backend-mongo-1  Stopping                                                                                                          0.2s
+[0m[?25h[1A[1A[0G[?25l[34m[+] Running 1/1[0m
+[34m ⠿ Container todo-backend-mongo-1  Stopped                                                                                                           0.3s
+[0m[?25hcanceled
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ [K]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ script exericse_[K[K[K[K[Kcise_again
+Script started, file is exercise_again
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ sudo nano custom.confls[Kcd /etc/gdm3/ls[Ksudo nano custom.conf[Kexit
+exit
+Script done, file is exercise_again
+]0;arttu@mamel: ~/devaus/part12-containers-applications/todo-app/todo-backend[01;32marttu@mamel[00m:[01;34m~/devaus/part12-containers-applications/todo-app/todo-backend[00m$ exit
+exit
+
+Script done on 2022-05-14 14:27:46+03:00 [COMMAND_EXIT_CODE="0"]
