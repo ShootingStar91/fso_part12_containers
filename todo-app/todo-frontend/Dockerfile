@@ -2,13 +2,15 @@ FROM node:16 AS build-stage
 
 WORKDIR /usr/src/app
 
-COPY . .
+COPY package*.json ./
 
 RUN npm ci
 
-ENV REACT_APP_BACKEND_URL=http://localhost:3000
+COPY . .
 
 RUN CI=true npm test
+
+ENV REACT_APP_BACKEND_URL="http://localhost:8080/api/"
 
 RUN npm run build
 
