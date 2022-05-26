@@ -19,10 +19,10 @@ const SinglePatientPage = () => {
     const fetchPatient = async () => {
       try {
         const { data: newPatient } = await axios.get<Patient>(
-          `${apiBaseUrl}/patients/${id}`
+          `${apiBaseUrl as string}/patients/${id}`
         );
         const { data: newDiagnoses } = await axios.get<Diagnosis[]>(
-          `${apiBaseUrl}/diagnoses/`
+          `${apiBaseUrl as string}/diagnoses/`
         );
         setPatient(newPatient);
         setDiagnoses(newDiagnoses);
@@ -41,7 +41,7 @@ const SinglePatientPage = () => {
   const onSubmit = async (values: EntryValues, { resetForm }: { resetForm: () => void }) => {
     try {
       const { data } = await axios.post<Entry>(
-        `${apiBaseUrl}/patients/${id}/entries`,
+        `${apiBaseUrl as string}/patients/${id}/entries`,
         values
       );
       const newEntry = data;

@@ -45,4 +45,4 @@ services:
     container_name: reverse-proxy
     depends_on:
       - app
-      - backend
+      - server

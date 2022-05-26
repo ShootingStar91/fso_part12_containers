@@ -20,7 +20,8 @@ router.get('/', async (req, res) => {
 
   res.send({
     ...configs,
-    visits
+    visits,
+    extra: "extra field"
   });
 });
 
